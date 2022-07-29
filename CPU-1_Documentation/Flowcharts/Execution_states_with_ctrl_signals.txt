@@ -1,0 +1,102 @@
+SIGNALS:
+	A reg: 		{loadA, enA}
+	B reg: 		{loadB, enB}
+	I reg:		{loadIR}
+	ALU:    	{OpSel(1), OpSel(0), enALU}
+	ProgCnt:	{enPC, LoadHighPC LoadLowPC, IncPC, LatchNewAddrPC}
+	FlagReg:	{loadZeroFR, loadEqFR, loadCarryFR}
+	AddrLatch:	{loadAL, HiByteAL, LoByteAL, enAL, selAL}
+	DataBuffer:	{enDB, dirDB}
+	MemCtrl:	{RD, WR}
+	
+INSTRUCTIONS:
+	ADD:
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		ADDOperation:		{IncPC, loadA, enALU, loadZeroFR, loadCarryFR}
+	OR:
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		ANDOperation:		{IncPC, loadA, OpSel(1), enALU, loadZeroFR}
+	AND:
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		OROperation:		{IncPC, loadA, enALU, OpSel(0), enALU, loadZeroFR}
+	CP:
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		CPOperation:		{IncPC, OpSel(1), OpSel(0), loadZeroFR, loadEqFR}
+	LDAimm:
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		IncrementPC:		{IncPC}
+		LoadARegPC:			{enPC, enAL, RD, enDB, loadA}
+	LDA(imm):
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		IncrementPC:		{IncPC}
+		LoadALHi:			{enPC, loadAL, HiByteAL, enAL, RD, enDB}
+		IncrementPC1:		{IncPC}
+		LoadALLo:			{enPC, loadAL, LoByteAL, enAL, RD, enDB}
+		IncrementPC2:		{IncPC}
+		LoadARegAL:			{enAL, selAL, RD, enDB, loadA}
+		IncrementPC3:		{IncPC}
+	LDBimm:
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		IncrementPC:		{IncPC}
+		LoadBRegPC:			{enPC, enAL, RD, enDB, loadB}
+	LDB(imm):
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		IncrementPC:		{IncPC}
+		LoadALHi:			{enPC, loadAL, HiByteAL, enAL, RD, enDB}
+		IncrementPC1:		{IncPC}
+		LoadALLo:			{enPC, loadAL, LoByteAL, enAL, RD, enDB}
+		IncrementPC2:		{IncPC}
+		LoadBRegAL:			{enAL, selAL, RD, enDB, loadB}
+		IncrementPC3:		{IncPC}
+	STA(imm):
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		IncrementPC:		{IncPC}
+		LoadALHi:			{enPC, loadAL, HiByteAL, enAL, RD, enDB}
+		IncrementPC1:		{IncPC}
+		LoadALLo:			{enPC, loadAL, LoByteAL, enAL, RD, enDB}
+		IncrementPC2:		{IncPC}
+		StoreAInMem:		{enAL, selAL, WR, enDB, dirDB, enA}
+	STB(imm):
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		IncrementPC:		{IncPC}
+		LoadALHi:			{enPC, loadAL, HiByteAL, enAL, RD, enDB}
+		IncrementPC1:		{IncPC}
+		LoadALLo:			{enPC, loadAL, LoByteAL, enAL, RD, enDB}
+		IncrementPC2:		{IncPC}
+		StoreBInMem:		{enAL, selAL, WR, enDB, dirDB, enB}
+	JMP(imm)/JNZ(imm) or JPC(imm) condition not met:
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		IncrementPC:		{IncPC}
+		LoadPCHi:			{enPC, LoadHighPC, enAL, RD, enDB}
+		IncrementPC1:		{IncPC}
+		LoadPCLo:			{enPC, LoadLowPC, enAL, RD, enDB}
+		LatchNewPC:			{LatchNewAddrPC}
+	JNZ(imm)/JPC(imm) condition not met:
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		IncrementPC:		{IncPC}
+
+ALL STATES: (20)
+
+		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
+		ADDOperation:		{IncPC, loadA, enALU, loadZeroFR, loadCarryFR}
+		ANDOperation:		{IncPC, loadA, OpSel(0), enALU, loadZeroFR}
+		OROperation:		{IncPC, loadA, enALU, OpSel(1), enALU, loadZeroFR}
+		CPOperation:		{IncPC, OpSel(1), OpSel(0), loadZeroFR, loadEqFR}
+		IncrementPC:		{IncPC}
+		IncrementPC1:		{IncPC}
+		IncrementPC2:		{IncPC}
+		IncrementPC3:		{IncPC}
+		LoadARegPC:			{enPC, enAL, RD, enDB, loadA}
+		LoadALHi:			{enPC, loadAL, HiByteAL, enAL, RD, enDB}
+		LoadALLo:			{enPC, loadAL, LoByteAL, enAL, RD, enDB}
+		LoadARegAL:			{enAL, selAL, RD, enDB, loadA}
+		LoadBRegPC:			{enPC, enAL, RD, enDB, loadB}
+		LoadBRegAL:			{enAL, selAL, RD, enDB, loadB}
+		StoreAInMem:		{enAL, selAL, WR, enDB, dirDB, enA}
+		StoreBInMem:		{enAL, selAL, WR, enDB, dirDB, enB}
+		LoadPCHi:			{enPC, LoadHighPC, enAL, RD, enDB}
+		LoadPCLo:			{enPC, LoadLowPC, enAL, RD, enDB}
+		LatchNewPC:			{LatchNewAddrPC}
+		
+	
+	

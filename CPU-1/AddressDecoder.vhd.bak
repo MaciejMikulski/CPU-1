@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity AddressDecoder is
+	port (AddressIn : in std_logic_vector(15 downto 0);
+		   RAMsel : out std_logic;
+			ROMsel : out std_logic;
+			IOsel : out std_logic
+		  );
+end entity;
+
+architecture arch of AddressDecoder is
+begin
+	process (AddressIn)
+	begin
+		RAMsel <= '1';
+		ROMsel <= '1';
+		IOsel <= '1';
+	
+		if(AddressIn(15 downto 6) = ("0000_0000_0000_0000")) then --ROM 0x0000-0x003F
+			ROMsel <= '0';
+		elsif(AddressIn(15 downto 6) = ("0000_0000_0100_0000")) then --RAM 0x0040-0x007F
+			RAMsel <= '0';
+		elsif(AddressIn(15 downto 0) = ("0000_0000_1000_0000")) then --IO port 0x0080
+			IOsel <= '0';
+		end if;
+	end process;
+
+end architecture;

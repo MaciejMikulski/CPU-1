@@ -1,0 +1,121 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "AddressBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "AddressBus[15]",
+					"strict" : false
+				},
+				{
+					"name" : "RD",
+					"strict" : false
+				},
+				{
+					"name" : "WR",
+					"strict" : false
+				},
+				{
+					"name" : "DataBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

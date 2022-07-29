@@ -1,0 +1,327 @@
+$comment
+	File created using the following command:
+		vcd file CPU-1.msim.vcd -direction
+$end
+$date
+	Mon Sep 27 16:43:26 2021
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module addressdecoder_vhd_vec_tst $end
+$var wire 1 ! AddressIn [15] $end
+$var wire 1 " AddressIn [14] $end
+$var wire 1 # AddressIn [13] $end
+$var wire 1 $ AddressIn [12] $end
+$var wire 1 % AddressIn [11] $end
+$var wire 1 & AddressIn [10] $end
+$var wire 1 ' AddressIn [9] $end
+$var wire 1 ( AddressIn [8] $end
+$var wire 1 ) AddressIn [7] $end
+$var wire 1 * AddressIn [6] $end
+$var wire 1 + AddressIn [5] $end
+$var wire 1 , AddressIn [4] $end
+$var wire 1 - AddressIn [3] $end
+$var wire 1 . AddressIn [2] $end
+$var wire 1 / AddressIn [1] $end
+$var wire 1 0 AddressIn [0] $end
+$var wire 1 1 IOsel $end
+$var wire 1 2 RAMsel $end
+$var wire 1 3 ROMsel $end
+
+$scope module i1 $end
+$var wire 1 4 gnd $end
+$var wire 1 5 vcc $end
+$var wire 1 6 unknown $end
+$var wire 1 7 devoe $end
+$var wire 1 8 devclrn $end
+$var wire 1 9 devpor $end
+$var wire 1 : ww_devoe $end
+$var wire 1 ; ww_devclrn $end
+$var wire 1 < ww_devpor $end
+$var wire 1 = ww_AddressIn [15] $end
+$var wire 1 > ww_AddressIn [14] $end
+$var wire 1 ? ww_AddressIn [13] $end
+$var wire 1 @ ww_AddressIn [12] $end
+$var wire 1 A ww_AddressIn [11] $end
+$var wire 1 B ww_AddressIn [10] $end
+$var wire 1 C ww_AddressIn [9] $end
+$var wire 1 D ww_AddressIn [8] $end
+$var wire 1 E ww_AddressIn [7] $end
+$var wire 1 F ww_AddressIn [6] $end
+$var wire 1 G ww_AddressIn [5] $end
+$var wire 1 H ww_AddressIn [4] $end
+$var wire 1 I ww_AddressIn [3] $end
+$var wire 1 J ww_AddressIn [2] $end
+$var wire 1 K ww_AddressIn [1] $end
+$var wire 1 L ww_AddressIn [0] $end
+$var wire 1 M ww_RAMsel $end
+$var wire 1 N ww_ROMsel $end
+$var wire 1 O ww_IOsel $end
+$var wire 1 P \RAMsel~output_o\ $end
+$var wire 1 Q \ROMsel~output_o\ $end
+$var wire 1 R \IOsel~output_o\ $end
+$var wire 1 S \AddressIn[6]~input_o\ $end
+$var wire 1 T \AddressIn[8]~input_o\ $end
+$var wire 1 U \AddressIn[9]~input_o\ $end
+$var wire 1 V \AddressIn[10]~input_o\ $end
+$var wire 1 W \AddressIn[11]~input_o\ $end
+$var wire 1 X \Equal0~0_combout\ $end
+$var wire 1 Y \AddressIn[12]~input_o\ $end
+$var wire 1 Z \AddressIn[13]~input_o\ $end
+$var wire 1 [ \AddressIn[14]~input_o\ $end
+$var wire 1 \ \AddressIn[15]~input_o\ $end
+$var wire 1 ] \Equal0~1_combout\ $end
+$var wire 1 ^ \AddressIn[7]~input_o\ $end
+$var wire 1 _ \Equal1~0_combout\ $end
+$var wire 1 ` \Equal0~2_combout\ $end
+$var wire 1 a \AddressIn[0]~input_o\ $end
+$var wire 1 b \AddressIn[1]~input_o\ $end
+$var wire 1 c \AddressIn[2]~input_o\ $end
+$var wire 1 d \AddressIn[3]~input_o\ $end
+$var wire 1 e \Equal2~0_combout\ $end
+$var wire 1 f \AddressIn[4]~input_o\ $end
+$var wire 1 g \AddressIn[5]~input_o\ $end
+$var wire 1 h \Equal2~1_combout\ $end
+$var wire 1 i \Equal2~2_combout\ $end
+$var wire 1 j \ALT_INV_Equal2~2_combout\ $end
+$var wire 1 k \ALT_INV_Equal0~2_combout\ $end
+$var wire 1 l \ALT_INV_Equal1~0_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+11
+12
+03
+04
+15
+x6
+17
+18
+19
+1:
+1;
+1<
+1M
+0N
+1O
+1P
+0Q
+1R
+0S
+0T
+0U
+0V
+0W
+1X
+0Y
+0Z
+0[
+0\
+1]
+0^
+0_
+1`
+1a
+1b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+1j
+0k
+1l
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0)
+0*
+0+
+0,
+0-
+0.
+1/
+10
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+1K
+1L
+$end
+#20000
+1+
+0/
+00
+0L
+0K
+1G
+1g
+0b
+0a
+1e
+#60000
+0+
+10
+1*
+1.
+1L
+1J
+0G
+1F
+1S
+0g
+1c
+1a
+0e
+1_
+0`
+1k
+0l
+0P
+1Q
+0M
+1N
+02
+13
+#110000
+00
+0*
+0.
+1)
+0L
+0J
+0F
+1E
+1^
+0S
+0c
+0a
+1e
+0_
+1h
+1l
+1i
+0j
+1P
+1M
+0R
+12
+0O
+01
+#160000
+0)
+1+
+1/
+1'
+1K
+1G
+0E
+1C
+1U
+0^
+1g
+1b
+0e
+1`
+0h
+0X
+0k
+0`
+0i
+1j
+1k
+0Q
+0N
+1Q
+1R
+03
+1N
+1O
+13
+11
+#170000
+1)
+0'
+10
+1*
+1.
+1(
+1,
+1-
+1L
+1J
+1I
+1H
+1F
+1E
+1D
+0C
+0U
+1T
+1^
+1S
+1f
+1d
+1c
+1a
+#210000
+0)
+00
+0*
+0.
+0(
+0,
+0-
+0+
+0/
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+0T
+0^
+0S
+0g
+0f
+0d
+0c
+0b
+0a
+1e
+1X
+1`
+0k
+0Q
+0N
+03
+#1000000
