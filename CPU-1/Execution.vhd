@@ -60,8 +60,8 @@ architecture arch of Execution is
    ATTRIBUTE syn_encoding                : STRING;
    ATTRIBUTE syn_encoding OF OPCODE : TYPE IS "00000000 00000001 00000010 00000011 00010000 00010001 00010010 00010011 00010100 00010101 00100000 00100001 00100010 00100011";
 
-	type STATE_T is (InstructionFetch, ADDOperation, ANDOperation, OROperation, CPOperation, IncrementPC, IncrementPC1, IncrementPC2, IncrementPC3,
-						LoadARegPC, LoadALHi, LoadALLo, LoadARegAL, LoadBRegPC, LoadBRegAL, StoreAInMem, StoreBInMem, LoadPCHi, LoadPCLo, LatchNewPC);
+	type STATE_T is (InstructionFetch, ADDOperation, ANDOperation, OROperation, CPOperation, IncrementPC, IncrementPC1, IncrementPC2, LoadARegPC, 
+					 LoadALHi, LoadALLo, LoadARegAL, LoadBRegPC, LoadBRegAL, StoreAInMem, StoreBInMem, LoadPCHi, LoadPCLo, LatchNewPC);
 	signal state, next_state : STATE_T;
 
 begin
@@ -134,8 +134,6 @@ begin
 				elsif(state = IncrementPC2) then
 					next_state <= LoadARegAL;
 				elsif(state = LoadARegAL) then 
-					next_state <= IncrementPC3;
-				elsif(state = IncrementPC3) then
 					next_state <= InstructionFetch;
 				else
 					next_state <= InstructionFetch;
@@ -164,8 +162,6 @@ begin
 				elsif(state = IncrementPC2) then
 					next_state <= LoadBRegAL;
 				elsif(state = LoadBRegAL) then 
-					next_state <= IncrementPC3;
-				elsif(state = IncrementPC3) then
 					next_state <= InstructionFetch;
 				else
 					next_state <= InstructionFetch;
@@ -354,8 +350,6 @@ begin
 			when IncrementPC1 =>
 				IncPC <= '1';
 			when IncrementPC2	=>
-				IncPC <= '1';
-			when IncrementPC3	=>
 				IncPC <= '1';
 			when LoadARegPC =>
 				enPC <= '1';
