@@ -34,7 +34,6 @@ INSTRUCTIONS:
 		LoadALLo:			{enPC, loadAL, LoByteAL, enAL, RD, enDB}
 		IncrementPC2:		{IncPC}
 		LoadARegAL:			{enAL, selAL, RD, enDB, loadA}
-		IncrementPC3:		{IncPC}
 	LDBimm:
 		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
 		IncrementPC:		{IncPC}
@@ -47,7 +46,6 @@ INSTRUCTIONS:
 		LoadALLo:			{enPC, loadAL, LoByteAL, enAL, RD, enDB}
 		IncrementPC2:		{IncPC}
 		LoadBRegAL:			{enAL, selAL, RD, enDB, loadB}
-		IncrementPC3:		{IncPC}
 	STA(imm):
 		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
 		IncrementPC:		{IncPC}
@@ -75,7 +73,7 @@ INSTRUCTIONS:
 		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
 		IncrementPC:		{IncPC}
 
-ALL STATES: (20)
+ALL STATES: (19)
 
 		InstructionFetch: 	{enPC, enAL, RD, enDB, loadIR}
 		ADDOperation:		{IncPC, loadA, enALU, loadZeroFR, loadCarryFR}
@@ -85,7 +83,6 @@ ALL STATES: (20)
 		IncrementPC:		{IncPC}
 		IncrementPC1:		{IncPC}
 		IncrementPC2:		{IncPC}
-		IncrementPC3:		{IncPC}
 		LoadARegPC:			{enPC, enAL, RD, enDB, loadA}
 		LoadALHi:			{enPC, loadAL, HiByteAL, enAL, RD, enDB}
 		LoadALLo:			{enPC, loadAL, LoByteAL, enAL, RD, enDB}

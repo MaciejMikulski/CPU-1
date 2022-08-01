@@ -22,15 +22,15 @@
   	{name: 'en', wave: '0101010.'},
    	{name: 'dir', wave: '0.......'},
   ],
-   {name: 'Carry Flag', wave: '=.......', data:['Carry flag state']},
+   {name: 'Equal Flag', wave: '=.......', data:['Equal flag state']},
   ['I reg',  
   	{name: 'Instruction reg load', wave: '010.....'},
    {name: 'Instruction reg data', wave: '=..=............', data: ['Old', 'New Opcode'], period: 0.5},
   ],
    {node: '..ab...c.'},
 ],
-    head: {text:['tspan',['tspan', {fill:'black', 'font-weight':'bold'}, 'JPC instruction']]},
+    head: {text:['tspan',['tspan', {fill:'black', 'font-weight':'bold'}, 'JEQ instruction']]},
 	foot:{tock: 'Tx T1 T2 T3 T4 T5 T6 Tx '},
   	config: { hscale: 2 },
-    edge:['b<->c Executed conditionally if C=1', 'a-b C flag check']
+    edge:['b<->c Executed conditionally if EQ=1', 'a-b EQ flag check']
 }

@@ -54,6 +54,6 @@
   ],    
 ],
     head: {text:['tspan',['tspan', {fill:'black', 'font-weight':'bold'}, 'ADD Instruction']]},
-    foot:{tock: 'T1 T2 T3 T4 '},
+    foot:{tock: 'Tx T1 T2 Tx '},
     config: { hscale: 2 } 
 }
