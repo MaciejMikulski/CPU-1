@@ -61,7 +61,7 @@ architecture arch of Execution is
    ATTRIBUTE syn_encoding                : STRING;
    ATTRIBUTE syn_encoding OF OPCODE : TYPE IS "00000000 00000001 00000010 00000011 00010000 00010001 00010010 00010011 00010100 00010101 00100000 00100001 00100010 00100011";
 
-	type STATE_T is (InstructionFetch, ADDOperation, ANDOperation, OROperation, CPOperation, IncrementPC, IncrementPC1, IncrementPC2, LoadARegPC, 
+	type STATE_T is (InstructionFetch, ADDOperation, ANDOperation, OROperation, CPOperation, IncrementPCjump, IncrementPC, IncrementPC1, IncrementPC2, LoadARegPC, 
 					 LoadALHi, LoadALLo, LoadARegAL, LoadBRegPC, LoadBRegAL, StoreAInMem, StoreBInMem, LoadPCHi, LoadPCLo, LatchNewPC);
 	signal state, next_state : STATE_T;
 
@@ -237,13 +237,15 @@ begin
 			--------------------------------------------- JNZ INSTRUCTION
 			when X"21" => --JNZ =>
 				if(state = InstructionFetch) then
-					next_state <= IncrementPC;
-				elsif(state = IncrementPC) then
-					if(zeroFlag = '1') then
-						next_state <= InstructionFetch;
+					if(zeroFlag = '0') then
+						next_state <= IncrementPCjump;
 					else
-						next_state <= LoadPCHi;
+						next_state <= IncrementPC;
 					end if;
+				elsif(state = IncrementPC) then
+					next_state <= InstructionFetch;
+				elsif(state = IncrementPCjump) then
+					next_state <= LoadPCHi;
 				elsif(state = LoadPCHi) then 
 					next_state <= IncrementPC1;
 				elsif(state = IncrementPC1) then
@@ -258,13 +260,15 @@ begin
 			--------------------------------------------- JPC INSTRUCTION
 			when X"22" => --JPC =>
 				if(state = InstructionFetch) then
-					next_state <= IncrementPC;
-				elsif(state = IncrementPC) then
-					if(carryFlag = '0') then
-						next_state <= InstructionFetch;
+					if(carryFlag = '1') then
+						next_state <= IncrementPCjump;
 					else
-						next_state <= LoadPCHi;
+						next_state <= IncrementPC;
 					end if;
+				elsif(state = IncrementPC) then
+					next_state <= InstructionFetch;
+				elsif(state = IncrementPCjump) then
+					next_state <= LoadPCHi;
 				elsif(state = LoadPCHi) then 
 					next_state <= IncrementPC1;
 				elsif(state = IncrementPC1) then
@@ -279,13 +283,15 @@ begin
 			--------------------------------------------- JEQ INSTRUCTION
 			when X"23" => --JEQ =>
 				if(state = InstructionFetch) then
-					next_state <= IncrementPC;
-				elsif(state = IncrementPC) then
-					if(eqFlag = '0') then
-						next_state <= InstructionFetch;
+					if(eqFlag = '1') then
+						next_state <= IncrementPCjump;
 					else
-						next_state <= LoadPCHi;
+						next_state <= IncrementPC;
 					end if;
+				elsif(state = IncrementPC) then
+					next_state <= InstructionFetch;
+				elsif(state = IncrementPCjump) then
+					next_state <= LoadPCHi;
 				elsif(state = LoadPCHi) then 
 					next_state <= IncrementPC1;
 				elsif(state = IncrementPC1) then
@@ -366,6 +372,9 @@ begin
 				enALU <= '1';
 				loadZeroFlagFR <= '1';
 				loadEqFlagFR <= '1';
+			when IncrementPCjump =>
+				IncPC <= '1';
+				clearFR <= '1';
 			when IncrementPC =>
 				IncPC <= '1';
 			when IncrementPC1 =>

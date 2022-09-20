@@ -27,10 +27,14 @@
   	{name: 'Instruction reg load', wave: '010.....'},
    {name: 'Instruction reg data', wave: '=..=............', data: ['Old', 'New Opcode'], period: 0.5},
   ],
-   {node: '..ab...c.'},
+   {node: '.ab....c.'},
+  ['Flag reg',
+   {name: 'ClearFR', wave:'0=0...=0'} 
+  ],
+   {node: '.de...fg.'},
 ],
     head: {text:['tspan',['tspan', {fill:'black', 'font-weight':'bold'}, 'JNZ instruction']]},
 	foot:{tock: 'Tx T1 T2 T3 T4 T5 T6 Tx '},
   	config: { hscale: 2 },
-    edge:['b<->c Executed conditionally if Z=0', 'a-b Z flag check']
+    edge:['b<->c Executed conditionally if Z=0', 'a-b Z flag check', 'd-e Active if Z=1', 'f-g Active if Z=0']
 }

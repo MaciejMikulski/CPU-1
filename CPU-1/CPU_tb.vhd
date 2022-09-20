@@ -39,8 +39,8 @@ architecture arch of CPU_tb is
 							X"15" after 35 ns, X"00" after 39 ns, X"11" after 43 ns, (others => 'Z') after 47 ns,
 						-- AND OR CP ADD
 							X"01" after 49 ns, X"02" after 53 ns, X"03" after 57 ns,
-						-- JEQ 							0x0010 - jump executed
-							X"23" after 61 ns, X"00" after 65 ns, X"10" after 69 ns,
+						-- JEQ 							0x0020 - jump executed
+							X"23" after 61 ns, X"00" after 65 ns, X"20" after 69 ns,
 						-- JEQ	0x001F		 JNZ							0xABCD - jump executed
 							X"23" after 73 ns, X"21" after 77 ns, X"AB" after 81 ns, X"CD" after 85 ns,
 						-- JMP 							0x001F - jump executed
