@@ -41,6 +41,7 @@ entity Execution is
 			loadZeroFlagFR : out std_logic;
 			loadEqFlagFR : out std_logic;
 			loadCarryFlagFR : out std_logic;
+			clearFR : out std_logic;
 			
 			--Addr latch control signals
 			loadAL : out std_logic;
@@ -78,6 +79,7 @@ begin
 	STATE_PROC : process(state, instrIn, zeroFlag, eqFlag, carryFlag)
 	begin
 		case instrIn is --OPCODE'VAL(to_integer(unsigned(instrIn))) is
+			--------------------------------------------- ADD INSTRUCTION
 			when X"00" => --ADD =>
 				if(state = InstructionFetch) then
 					next_state <= ADDOperation;
@@ -86,6 +88,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- AND INSTRUCTION	
 			when X"01" => --AND_I =>
 				if(state = InstructionFetch) then
 					next_state <= ANDOperation;
@@ -94,6 +97,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- OR INSTRUCTION	
 			when X"02" => --OR_I => 
 				if(state = InstructionFetch) then
 					next_state <= OROperation;
@@ -102,6 +106,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- CP INSTRUCTION	
 			when X"03" => --CP =>
 				if(state = InstructionFetch) then
 					next_state <= CPOperation;
@@ -110,16 +115,20 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- LDA imm INSTRUCTION	
 			when X"10" => --LDAimm =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
 				elsif(state = IncrementPC) then
 					next_state <= LoadARegPC;
 				elsif(state = LoadARegPC) then
+					next_state <= IncrementPC1;
+				elsif(state = IncrementPC1) then
 					next_state <= InstructionFetch;
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- LDA ind INSTRUCTION
 			when X"11" => --LDAind =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
@@ -138,16 +147,20 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- LDB imm INSTRUCTION
 			when X"12" => --LDBimm =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
 				elsif(state = IncrementPC) then
 					next_state <= LoadBRegPC;
 				elsif(state = LoadBRegPC) then
+					next_state <= IncrementPC1;
+				elsif(state = IncrementPC1) then
 					next_state <= InstructionFetch;
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- LDB ind INSTRUCTION
 			when X"13" => --LDBind =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
@@ -166,6 +179,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- STA ind INSTRUCTION
 			when X"14" => --STAind =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
@@ -184,6 +198,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- STB ind INSTRUCTION
 			when X"15" => --STBind =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
@@ -202,6 +217,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- JMP INSTRUCTION
 			when X"20" => --JMP =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
@@ -218,6 +234,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- JNZ INSTRUCTION
 			when X"21" => --JNZ =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
@@ -238,6 +255,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- JPC INSTRUCTION
 			when X"22" => --JPC =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
@@ -258,6 +276,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- JEQ INSTRUCTION
 			when X"23" => --JEQ =>
 				if(state = InstructionFetch) then
 					next_state <= IncrementPC;
@@ -278,6 +297,7 @@ begin
 				else
 					next_state <= InstructionFetch;
 				end if;
+			--------------------------------------------- OTHER - INVALID OPCODE
 			when others => 
 				next_state <= InstructionFetch;
 		end case;
@@ -302,6 +322,7 @@ begin
 		loadZeroFlagFR <= '0';
 		loadEqFlagFR <= '0';
 		loadCarryFlagFR <= '0';
+		clearFR <= '0';
 		loadAL <= '0';
 		HiByteAL <= '0';
 		LoByteAL <= '0';
@@ -417,6 +438,7 @@ begin
 				enDB <= '1';
 			when LatchNewPC =>
 				LatchNewAddrPC <= '1';
+				clearFR <= '1';
 		end case;
 	end process;
 	

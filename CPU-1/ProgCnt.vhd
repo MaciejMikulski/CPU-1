@@ -26,6 +26,7 @@ begin
 	
 		if(clr = '1') then	--Asynchronous clear
 			data <= (others => '0');
+			newData <= (others => '0');
 		elsif (falling_edge(clk)) then
 			if(Inc = '1') then
 				data <= std_logic_vector(unsigned(data) + 1);

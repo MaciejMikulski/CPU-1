@@ -20,7 +20,7 @@ entity FlagReg is
 end entity;
 
 architecture arch of FlagReg is
-	signal data : std_logic_vector(3 downto 0);
+	signal data : std_logic_vector(2 downto 0);
 begin
 	
 	process(clr, ZeroIn, EqIn, CarryIn, clk, loadZero, loadEq, loadCarry)

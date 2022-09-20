@@ -22,7 +22,8 @@ signal A_to_ALU, B_to_ALU, I_to_Ctrl, dBus : std_logic_vector(7 downto 0);
 signal aBus : std_logic_vector(15 downto 0);
 signal WR_to_out, RD_to_out : std_logic;
 signal loadA, enA, loadB, enB, loadIR, enALU, enPC, LoadHighPC, LoadLowPC, IncPC, LatchNewAddrPC, loadZeroFlagFR, loadEqFlagFR, loadCarryFlagFR,
-		 loadAL, HiByteAL, LoByteAL, enAL, selAL, enDB, dirDB :  std_logic;
+		 clearFR, loadAL, HiByteAL, LoByteAL, enAL, selAL, enDB, dirDB :  std_logic;
+signal clearFR_sig : std_logic; -- result of ORing clearFR and rst signals 
 signal OpSel : std_logic_vector(1 downto 0);
 
 
@@ -155,6 +156,7 @@ component Execution
 			loadZeroFlagFR : out std_logic;
 			loadEqFlagFR : out std_logic;
 			loadCarryFlagFR : out std_logic;
+			clearFR : out std_logic;
 			loadAL : out std_logic;
 			HiByteAL : out std_logic;
 			LoByteAL : out std_logic;
@@ -174,8 +176,9 @@ begin
 								
 	PC : ProgCnt port map(DataIn => dBus, en => enPC, LoadHigh => LoadHighPC, LoadLow => LoadLowPC,  Inc => IncPC, 							
 								 LatchNewAddr => LatchNewAddrPC, clk => clk, clr => rst, AddrOut => aBus);
-								 
-	FR : FlagReg port map(clr => rst, ZeroIn => ZeroFlag_ALU_to_FR, EqIn => EqFlag_ALU_to_FR, CarryIn => CarryFlag_ALU_to_FR,
+	
+	clearFR_sig <= (rst or clearFR);
+	FR : FlagReg port map(clr => clearFR_sig, ZeroIn => ZeroFlag_ALU_to_FR, EqIn => EqFlag_ALU_to_FR, CarryIn => CarryFlag_ALU_to_FR,
 								 clk => clk, loadZero => loadZeroFlagFR, loadEq => loadEqFlagFR, loadCarry => loadCarryFlagFR, ZeroOut => ZeroFlag_to_Ctrl,
 								 CarryOut => CarryFlag_to_Ctrl, EqOut => EqFlag_to_Ctrl);
 								 
@@ -189,7 +192,7 @@ begin
 	Ctrl : Execution port map(rst => rst, 	clk => clk, instrIn => I_to_Ctrl, zeroFlag => ZeroFlag_to_Ctrl, eqFlag => EqFlag_to_Ctrl, carryFlag => CarryFlag_to_Ctrl,
 									WR => WR, RD => RD, loadA => loadA, enA => enA, loadB => loadB, enB => enB, loadIR  => loadIR, OpSel => OpSel, enALU => enALU, enPC => enPC,
 									LoadHighPC => LoadHighPC, LoadLowPC => LoadLowPC, IncPC => IncPC, LatchNewAddrPC => LatchNewAddrPC, loadZeroFlagFR => loadZeroFLagFR, 
-									loadEqFlagFR => loadEqFlagFR, loadCarryFlagFR => loadCarryFlagFR, loadAL => loadAL, HiByteAL => HiByteAL, LoByteAL => LoByteAL, 
+									loadEqFlagFR => loadEqFlagFR, loadCarryFlagFR => loadCarryFlagFR, clearFR => clearFR, loadAL => loadAL, HiByteAL => HiByteAL, LoByteAL => LoByteAL, 
 									enAL => enAL, selAL => selAL, enDB => enDB, dirDB => dirDB);
 	
 end architecture;
