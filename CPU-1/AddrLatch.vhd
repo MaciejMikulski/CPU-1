@@ -8,7 +8,7 @@ entity AddrLatch is
 			load : in std_logic;									 --On rising edge of the clock, load data to latch if load ='1'	
 			HiByte :in std_logic;								 --Load data from data bus to high byte of address latch
 			LoByte : in std_logic;								 --Load data from data bus to low byte of address latch
-			en : in std_logic;								 --Address output enable, if en = '0', output is in hi-Z mode
+			--en : in std_logic;								 --Address output enable, if en = '0', output is in hi-Z mode
 			clr : in std_logic;
 			clk : in std_logic;
 			sel : in std_logic;
@@ -39,7 +39,7 @@ begin
 	tmp <= data when sel = '1' else --AddrBus/DataBus selection logic
 			 AddrBusIn;
 	
-	AddrBusOut <= tmp when en = '1' else
-					  (others=>'Z');
+	AddrBusOut <= tmp; --when en = '1' else
+					  --(others=>'Z');
 	
 end architecture;

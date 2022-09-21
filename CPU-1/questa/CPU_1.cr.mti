@@ -1,4 +1,14 @@
-H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/FlagReg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/FlagReg.vhd
+H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/RAM.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/RAM.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity RAM
+-- Compiling architecture rtl of RAM
+
+} {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/FlagReg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/FlagReg.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -6,26 +16,6 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package NUMERIC_STD
 -- Compiling entity FlagReg
 -- Compiling architecture arch of FlagReg
-
-} {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity CPU
--- Compiling architecture arch of CPU
-
-} {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/RAM.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/RAM.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Compiling entity RAM
--- Compiling architecture arch of RAM
 
 } {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/DataBuffer.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/DataBuffer.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
@@ -45,14 +35,24 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling entity CPU_tb
 -- Compiling architecture arch of CPU_tb
 
-} {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ProgCnt.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ProgCnt.vhd
+} {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ALU.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ALU.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity ProgCnt
--- Compiling architecture arch of ProgCnt
+-- Compiling entity ALU
+-- Compiling architecture arch of ALU
+
+} {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity ROM
+-- Compiling architecture rtl of ROM
 
 } {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/reg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/reg.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
@@ -63,15 +63,6 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling entity reg
 -- Compiling architecture arch of reg
 
-} {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ALU.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ALU.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity ALU
--- Compiling architecture arch of ALU
-
 } {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Ireg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Ireg.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
@@ -80,13 +71,5 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package NUMERIC_STD
 -- Compiling entity Ireg
 -- Compiling architecture arch of Ireg
-
-} {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/AddrLatch.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/AddrLatch.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity AddrLatch
--- Compiling architecture arch of AddrLatch
 
 } {} {}}

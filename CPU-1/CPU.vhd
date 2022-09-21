@@ -21,8 +21,9 @@ signal EqFlag_ALU_to_FR, ZeroFlag_ALU_to_FR, CarryFlag_ALU_to_FR, EqFlag_to_Ctrl
 signal A_to_ALU, B_to_ALU, I_to_Ctrl, dBus : std_logic_vector(7 downto 0);
 signal aBus : std_logic_vector(15 downto 0);
 signal WR_to_out, RD_to_out : std_logic;
-signal loadA, enA, loadB, enB, loadIR, enALU, enPC, LoadHighPC, LoadLowPC, IncPC, LatchNewAddrPC, loadZeroFlagFR, loadEqFlagFR, loadCarryFlagFR,
-		 clearFR, loadAL, HiByteAL, LoByteAL, enAL, selAL, enDB, dirDB :  std_logic;
+signal loadA, enA, loadB, enB, loadIR, enALU, LoadHighPC, LoadLowPC, IncPC, LatchNewAddrPC, loadZeroFlagFR, loadEqFlagFR, loadCarryFlagFR, --enPC,
+		 clearFR, loadAL, HiByteAL, LoByteAL, --enAL, 
+		 selAL, enDB, dirDB :  std_logic;
 signal clearFR_sig : std_logic; -- result of ORing clearFR and rst signals 
 signal OpSel : std_logic_vector(1 downto 0);
 
@@ -60,7 +61,7 @@ end component;
 component ProgCnt
 	port(
 			DataIn : in std_logic_vector(7 downto 0);
-			en : in std_logic;							
+			--en : in std_logic;							
 			LoadHigh : in std_logic;						
 			LoadLow : in std_logic;							
 			Inc : in std_logic;								
@@ -98,7 +99,7 @@ component AddrLatch
 			load : in std_logic;									 	
 			HiByte :in std_logic;								
 			LoByte : in std_logic;								
-			en : in std_logic;								
+			--en : in std_logic;								
 			clr : in std_logic;
 			clk : in std_logic;
 			sel : in std_logic;
@@ -148,7 +149,7 @@ component Execution
 			loadIR : out std_logic;
 			OpSel : out std_logic_vector(1 downto 0);
 			enALU : out std_logic;
-			enPC : out std_logic;
+			--enPC : out std_logic;
 			LoadHighPC : out std_logic;
 			LoadLowPC : out std_logic;
 			IncPC : out std_logic;
@@ -160,7 +161,7 @@ component Execution
 			loadAL : out std_logic;
 			HiByteAL : out std_logic;
 			LoByteAL : out std_logic;
-			enAL : out std_logic;
+			--enAL : out std_logic;
 			selAL : out std_logic;
 			enDB : out std_logic;
 			dirDB : out std_logic
@@ -174,7 +175,7 @@ begin
 	Arith : ALU port map(A => unsigned(A_to_ALU), B => unsigned(B_to_ALU), OpSel => OpSel, en => enALU, zero => ZeroFlag_ALU_to_FR,
 								carry => CarryFlag_ALU_to_FR, eq => EqFlag_ALU_to_FR, Dout => dBus);
 								
-	PC : ProgCnt port map(DataIn => dBus, en => enPC, LoadHigh => LoadHighPC, LoadLow => LoadLowPC,  Inc => IncPC, 							
+	PC : ProgCnt port map(DataIn => dBus, LoadHigh => LoadHighPC, LoadLow => LoadLowPC,  Inc => IncPC, --en => enPC,							
 								 LatchNewAddr => LatchNewAddrPC, clk => clk, clr => rst, AddrOut => aBus);
 	
 	clearFR_sig <= (rst or clearFR);
@@ -182,17 +183,18 @@ begin
 								 clk => clk, loadZero => loadZeroFlagFR, loadEq => loadEqFlagFR, loadCarry => loadCarryFlagFR, ZeroOut => ZeroFlag_to_Ctrl,
 								 CarryOut => CarryFlag_to_Ctrl, EqOut => EqFlag_to_Ctrl);
 								 
-	AL : AddrLatch port map(AddrBusIn => aBus, DataBusIn => dBus, load => loadAL, HiByte => HiByteAL, LoByte => LoByteAL, en => enAL, clr => rst,
-									clk => clk, sel => selAL, AddrBusOut => AddressBus);
+	AL : AddrLatch port map(AddrBusIn => aBus, DataBusIn => dBus, load => loadAL, HiByte => HiByteAL, LoByte => LoByteAL, --en => enAL, 
+									clr => rst, clk => clk, sel => selAL, AddrBusOut => AddressBus);
 	
 	DB : DataBuffer port map(Data1 => dBus, Data2 => DataBus, en => enDB, dir => dirDB);
 	
 	IR : Ireg port map(din => dBus, load => loadIR, clk => clk, clr => rst, dout => I_to_Ctrl);
 	
 	Ctrl : Execution port map(rst => rst, 	clk => clk, instrIn => I_to_Ctrl, zeroFlag => ZeroFlag_to_Ctrl, eqFlag => EqFlag_to_Ctrl, carryFlag => CarryFlag_to_Ctrl,
-									WR => WR, RD => RD, loadA => loadA, enA => enA, loadB => loadB, enB => enB, loadIR  => loadIR, OpSel => OpSel, enALU => enALU, enPC => enPC,
+									WR => WR, RD => RD, loadA => loadA, enA => enA, loadB => loadB, enB => enB, loadIR  => loadIR, OpSel => OpSel, enALU => enALU, --enPC => enPC,
 									LoadHighPC => LoadHighPC, LoadLowPC => LoadLowPC, IncPC => IncPC, LatchNewAddrPC => LatchNewAddrPC, loadZeroFlagFR => loadZeroFLagFR, 
 									loadEqFlagFR => loadEqFlagFR, loadCarryFlagFR => loadCarryFlagFR, clearFR => clearFR, loadAL => loadAL, HiByteAL => HiByteAL, LoByteAL => LoByteAL, 
-									enAL => enAL, selAL => selAL, enDB => enDB, dirDB => dirDB);
+									--enAL => enAL, 
+									selAL => selAL, enDB => enDB, dirDB => dirDB);
 	
 end architecture;

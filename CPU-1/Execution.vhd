@@ -31,7 +31,7 @@ entity Execution is
 			enALU : out std_logic;
 			
 			--PC control signals
-			enPC : out std_logic;
+			--enPC : out std_logic;
 			LoadHighPC : out std_logic;
 			LoadLowPC : out std_logic;
 			IncPC : out std_logic;
@@ -47,7 +47,7 @@ entity Execution is
 			loadAL : out std_logic;
 			HiByteAL : out std_logic;
 			LoByteAL : out std_logic;
-			enAL : out std_logic;
+			--enAL : out std_logic;
 			selAL : out std_logic;
 			
 			--Data buffer control signals
@@ -320,7 +320,7 @@ begin
 		loadIR <= '0';
 		OpSel <= "00";
 		enALU <= '0';
-		enPC <= '0';
+		--enPC <= '0';
 		LoadHighPC <= '0';
 		LoadLowPC <= '0';
 		IncPC <= '0';
@@ -332,15 +332,15 @@ begin
 		loadAL <= '0';
 		HiByteAL <= '0';
 		LoByteAL <= '0';
-		enAL <= '0';
+		--enAL <= '0';
 		selAL <= '0';
 		enDB <= '0';
 		dirDB <= '0';
 		
 		case state is
 			when InstructionFetch =>
-				enPC <= '1';
-				enAL <= '1';
+				--enPC <= '1';
+				--enAL <= '1';
 				RD <= '0';
 				enDB <= '1';
 				loadIR <= '1';
@@ -382,67 +382,67 @@ begin
 			when IncrementPC2	=>
 				IncPC <= '1';
 			when LoadARegPC =>
-				enPC <= '1';
-				enAL <= '1';
+				--enPC <= '1';
+				--enAL <= '1';
 				RD <= '0';
 				enDB <= '1';
 				loadA <= '1';
 			when LoadALHi =>
-				enPC <= '1';
+				--enPC <= '1';
 				loadAL <= '1';
 				HiByteAL <= '1';
-				enAL <= '1';
+				--enAL <= '1';
 				RD <= '0';
 				enDB <= '1';
 			when LoadALLo =>
-				enPC <= '1';
+				--enPC <= '1';
 				loadAL <= '1';
 				LoByteAL <= '1';
-				enAL <= '1';
+				--enAL <= '1';
 				RD <= '0';
 				enDB <= '1';
 			when LoadARegAL =>
-				enAL <= '1';
+				--enAL <= '1';
 				selAL <= '1';
 				RD <= '0';
 				enDB <= '1';
 				loadA <= '1';
 			when LoadBRegPC =>
-				enPC <= '1';
-				enAL <= '1';
+				--enPC <= '1';
+				--enAL <= '1';
 				RD <= '0';
 				enDB <= '1';
 				loadB <= '1';
 			when LoadBRegAL =>
-				enAL <= '1';
+				--enAL <= '1';
 				selAL <= '1';
 				RD <= '0';
 				enDB <= '1';
 				loadB <= '1';
 			when StoreAInMem =>
-				enAL <= '1';
+				--enAL <= '1';
 				selAL <= '1';
 				WR <= '0';
 				enDB <= '1';
 				dirDB <= '1';
 				enA <= '1';
 			when StoreBInMem =>
-				enAL <= '1';
+				--enAL <= '1';
 				selAL <= '1';
 				WR <= '0';
 				enDB <= '1';
 				dirDB <= '1';
 				enB <= '1';
 			when LoadPCHi =>
-				enPC <= '1';
+				--enPC <= '1';
 				LoadHighPC <= '1';
-				enAL <= '1';
+				--enAL <= '1';
 				RD <= '0';
 				enDB <= '1';
 			when LoadPCLo =>
-				enPC <= '1';
+				--enPC <= '1';
 				LoadLowPC <= '1';
-				enAL <= '1';
+				--enAL <= '1';
 				RD <= '0';
 				enDB <= '1';
 			when LatchNewPC =>

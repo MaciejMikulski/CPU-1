@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 entity ProgCnt is
 	port(
 			DataIn : in std_logic_vector(7 downto 0); --Data input from data bus
-			en : in std_logic;							--Output enable, if en = '0', output in hi-Z mode
+			--en : in std_logic;							--Output enable, if en = '0', output in hi-Z mode
 			LoadHigh : in std_logic;						--Load high byte of 16-bit address
 			LoadLow : in std_logic;							--Load low byte of 16-bit address
 			Inc : in std_logic;								--Increment program counter
@@ -40,7 +40,7 @@ begin
 		end if;
 	end process;
 	
-	AddrOut <= data when en ='1' else	--en logic
-					(others => 'Z');
+	AddrOut <= data;-- when en ='1';-- else	--en logic
+					--(others => 'Z');
 	
 end architecture;

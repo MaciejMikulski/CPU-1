@@ -1,48 +1,48 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.std_logic_unsigned.all;
-use IEEE.numeric_std.all;
-
-entity RAM is
-	port(
-			ce : in std_logic; -- Chip enable, active low
-			we : in std_logic; -- Write enable, active low
-			re : in std_logic; -- Read enable, active low
-			addr : in std_logic_vector(4 downto 0); -- Address bus
-			
-			data : inout std_logic_vector(7 downto 0) --Data bus
-			);
+ library ieee;
+ use ieee.std_logic_1164.all;
+ use ieee.std_logic_unsigned.all;
+ 
+ entity RAM is
+	generic (
+   DATA_WIDTH :integer := 8;
+   ADDR_WIDTH :integer := 4
+	);
+port (
+	address :in    std_logic_vector (ADDR_WIDTH-1 downto 0); -- address Input
+   data    :inout std_logic_vector (DATA_WIDTH-1 downto 0); -- data bi-directional
+   cs      :in    std_logic;                                -- Chip Select
+   we      :in    std_logic;                                -- Write Enable/Read Enable
+   oe      :in    std_logic                                 -- Output Enable
+   );
 end entity;
+architecture rtl of RAM is
+	----------------Internal variables----------------
+	constant RAM_DEPTH :integer := 2**ADDR_WIDTH;
 
-architecture arch of RAM is
+	signal data_out :std_logic_vector (DATA_WIDTH-1 downto 0);
 
-	signal data_out : std_logic_vector(7 downto 0);
-	
-	type memory_array is array (integer range <>) of std_logic_vector(7 downto 0);
-	signal mem : memory_array(0 to 31);
-
-begin
-
-	-- Output data onto data bus only when there is correct combination of control signals:
-	-- chip is selected an only read input is active. In other cases go into high Z mode
-	data <= data_out when (ce = '0' and re = '0' and we = '1') else (others => 'Z');
-	
-	MEM_WRITE: process (addr, data, ce, we)
-	begin
-		
-		if(ce = '0' and we = '0') then
-			mem(conv_integer(addr)) <= data;
+	type RAM is array (integer range <>)of std_logic_vector (DATA_WIDTH-1 downto 0);
+	signal mem : RAM (0 to RAM_DEPTH-1);
+	begin 
+	----------------Code Starts Here------------------
+	-- Tri-State Buffer control
+	data <= data_out when (cs = '0' and oe = '0' and we = '1') else (others=>'Z');
+	-- Memory Write Block
+	MEM_WRITE:
+	process (address, data, cs, we) begin
+		if (cs = '0' and we = '0') then
+			mem(conv_integer(address)) <= data;
 		end if;
-		
 	end process;
-	
-	MEM_READ: process (addr, ce, we, re, mem)
-	begin
-		
-		if(ce = '0' and we = '1' and re = '0') then
-			 data_out <= mem(conv_integer(addr));
+
+	-- Memory Read Block
+	MEM_READ:
+	process (address, cs, we, oe, mem) begin
+		if (cs = '0' and we = '1' and oe = '0')  then
+			data_out <= mem(conv_integer(address));
+		else
+			data_out <= (others => '0');
 		end if;
-		
 	end process;
-	
+
 end architecture;
