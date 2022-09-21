@@ -31,9 +31,8 @@
 Fibbonacci:
 	INIT:	LDA 0x01
 			LDB 0x01
-	LOOP:	STA [0x0200]
-			STA [0x0000]
+	LOOP:	STA [0x0020]
 			ADD
-			LDB [0x0000]
+			LDB [0x0020]
 			JMP LOOP
    
