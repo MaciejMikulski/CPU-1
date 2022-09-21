@@ -50,12 +50,10 @@ begin
 				(others =>'Z');
 				
 	tmp <= '0' & A + B;	--Getting carry signal
-	carry <= tmp(8) when en = '1' else
-				'Z';
-				
-	zero <= tmp_zero when en = '1' else --En logic for flags
-				'Z';
-				
-	eq <= tmp_eq when en = '1' else
-				'Z';			
+	
+	-- Flag outputs
+	carry <= tmp(8);		
+	zero <= tmp_zero;		
+	eq <= tmp_eq;		
+	
 end architecture;

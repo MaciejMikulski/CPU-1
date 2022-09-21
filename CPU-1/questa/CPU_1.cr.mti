@@ -35,15 +35,6 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling entity CPU_tb
 -- Compiling architecture arch of CPU_tb
 
-} {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ALU.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ALU.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity ALU
--- Compiling architecture arch of ALU
-
 } {} {}} H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD

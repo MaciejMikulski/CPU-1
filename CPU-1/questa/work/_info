@@ -43,6 +43,7 @@ R0
 R0
 R0
 R0
+R0
 !s11e vcom 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -52,32 +53,32 @@ R0
 cModel Technology
 dH:/Maciek/Elektronika/FPGA/Projekty/Complex_Number_ALU
 T_opt
-!s110 1663745248
-Vh=_foO=9LK4_C:58CRWIE1
+!s110 1663746943
+VN<imX?0V2NfFl;64zfeGM0
 04 6 4 work cpu_tb arch 1
-=13-fcaa1401b5b7-632abce0-c1-35dc
+=14-fcaa1401b5b7-632ac37f-87-35dc
 !s124 OEM10U13 
 o-quiet -auto_acc_if_foreign -work work +acc
 tCvgOpt 0
 n@_opt
 OL;O;2021.2;73
 Eaddrlatch
-Z1 w1663743389
+Z1 w1663746097
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 668
+!i122 680
 Z4 dH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/questa
 Z5 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/AddrLatch.vhd
 Z6 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/AddrLatch.vhd
 l0
 L4 1
-V7UU4@_R=STjbgQlE=E2P^3
-!s100 lo9CjM[bXPlPK2T;_Pm3D2
+VZ^f@KmLme7OIN5m<5a0h]1
+!s100 h4T;ZGezHKE6C:@cKQelZ0
 Z7 OL;C;2021.2;73
 32
-Z8 !s110 1663745240
+Z8 !s110 1663746936
 !i10b 1
-Z9 !s108 1663745240.000000
+Z9 !s108 1663746936.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/AddrLatch.vhd|
 Z11 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/AddrLatch.vhd|
 !i113 0
@@ -86,8 +87,8 @@ Z13 tExplicit 1 CvgOpt 0
 Aarch
 R2
 R3
-DEx4 work 9 addrlatch 0 22 7UU4@_R=STjbgQlE=E2P^3
-!i122 668
+DEx4 work 9 addrlatch 0 22 Z^f@KmLme7OIN5m<5a0h]1
+!i122 680
 l23
 L20 26
 V[OlbeXa0JaCl84aEhE;JL0
@@ -103,11 +104,11 @@ R11
 R12
 R13
 Ealu
-Z14 w1663493710
+Z14 w1663746882
 Z15 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R2
 R3
-!i122 669
+!i122 681
 R4
 Z16 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ALU.vhd
 Z17 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ALU.vhd
@@ -130,11 +131,11 @@ R15
 R2
 R3
 DEx4 work 3 alu 0 22 Ok_07?NK2Pz@ogW0g6[kl0
-!i122 669
+!i122 681
 l23
-L19 43
-Vb5W<i;bKTIbU:mn4kAzz32
-!s100 j7a1Th723@dbb`;>@PPWG3
+L19 41
+VCi@a_l7X9KM:AcP4TPCCz1
+!s100 c@k>:@gFbUahNdK0zUZEU2
 R7
 32
 R8
@@ -146,11 +147,11 @@ R19
 R12
 R13
 Ecpu
-Z20 w1663709113
+Z20 w1663746446
 R15
 R2
 R3
-!i122 670
+!i122 682
 R4
 Z21 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU.vhd
 Z22 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU.vhd
@@ -173,11 +174,11 @@ R15
 R2
 R3
 DEx4 work 3 cpu 0 22 eeT5;FSdTR`kbbY6hZ=]V0
-!i122 670
-l170
-L18 181
-V?hNDz^8M5YL2MWZRX9IN31
-!s100 5Q7n>aoQ6V4EIC`;ZWm[02
+!i122 682
+l171
+L18 183
+Vz:21kKe@GO=FM^ZggQH<20
+!s100 I`QU3<P_4Y6[OEF;kVK6<1
 R7
 32
 R8
@@ -193,7 +194,7 @@ Z25 w1663745236
 R15
 R2
 R3
-!i122 671
+!i122 683
 R4
 Z26 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU_tb.vhd
 Z27 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU_tb.vhd
@@ -203,11 +204,11 @@ VDfe58_RVT=K5XSbAdd8ZY2
 !s100 <I<lM2;^64`kH?@RYjXP[1
 R7
 32
-Z28 !s110 1663745241
+R8
 !i10b 1
 R9
-Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU_tb.vhd|
-Z30 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU_tb.vhd|
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU_tb.vhd|
+Z29 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/CPU_tb.vhd|
 !i113 0
 R12
 R13
@@ -216,39 +217,39 @@ R15
 R2
 R3
 DEx4 work 6 cpu_tb 0 22 Dfe58_RVT=K5XSbAdd8ZY2
-!i122 671
+!i122 683
 l56
 L8 112
 Vgk[fmC?ZEOVjA31eQ^jaG1
 !s100 _H<?XaP10PHcT2>IahoGi3
 R7
 32
-R28
+R8
 !i10b 1
 R9
+R28
 R29
-R30
 !i113 0
 R12
 R13
 Edatabuffer
-Z31 w1663744213
+Z30 w1663744213
 R15
 R2
 R3
-!i122 672
+!i122 684
 R4
-Z32 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/DataBuffer.vhd
-Z33 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/DataBuffer.vhd
+Z31 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/DataBuffer.vhd
+Z32 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/DataBuffer.vhd
 l0
 L5 1
 V=`]l0I0X>zS1gf=c7Ne<E0
 !s100 K88_76X>=EPl?nDG:hji53
 R7
 32
-R28
+Z33 !s110 1663746937
 !i10b 1
-Z34 !s108 1663745241.000000
+Z34 !s108 1663746937.000000
 Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/DataBuffer.vhd|
 Z36 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/DataBuffer.vhd|
 !i113 0
@@ -259,14 +260,14 @@ R15
 R2
 R3
 DEx4 work 10 databuffer 0 22 =`]l0I0X>zS1gf=c7Ne<E0
-!i122 672
+!i122 684
 l16
 L15 10
 VE7U:>65h87T`Hj?m<=dFL0
 !s100 @<1F=jQXM>AASQXLh5>8;1
 R7
 32
-R28
+R33
 !i10b 1
 R34
 R35
@@ -275,21 +276,21 @@ R36
 R12
 R13
 Eexecution
-Z37 w1663744149
+Z37 w1663746401
 R15
 R2
 R3
-!i122 673
+!i122 685
 R4
 Z38 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Execution.vhd
 Z39 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Execution.vhd
 l0
 L5 1
-V<33ec:d4b@aK^WY>l7jeM2
-!s100 b@XD89WdMn>nc7^UNeRVk3
+VVSnD6?@:T;TJPfkOezDmN1
+!s100 ;f0WGW9cPm_ZH5]DAaBGY2
 R7
 32
-R28
+R33
 !i10b 1
 R34
 Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Execution.vhd|
@@ -301,15 +302,15 @@ Aarch
 R15
 R2
 R3
-DEx4 work 9 execution 0 22 <33ec:d4b@aK^WY>l7jeM2
-!i122 673
+DEx4 work 9 execution 0 22 VSnD6?@:T;TJPfkOezDmN1
+!i122 685
 l68
 L59 396
-Veao_m1UOOCbaiI=SInOS91
-!s100 RTeYoZ02]G;WhXQK0l27I2
+VAjzVk75MD`CU`okUQSgX73
+!s100 Ei4RN`fUkfYG=LNJDFPHI1
 R7
 32
-R28
+R33
 !i10b 1
 R34
 R40
@@ -322,7 +323,7 @@ Z42 w1663709941
 R15
 R2
 R3
-!i122 674
+!i122 686
 R4
 Z43 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/FlagReg.vhd
 Z44 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/FlagReg.vhd
@@ -332,7 +333,7 @@ Vem:Xn:`4:O140zVk@7=d02
 !s100 @FE3z3>z90I8A[gA406`Y1
 R7
 32
-R28
+R33
 !i10b 1
 R34
 Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/FlagReg.vhd|
@@ -345,14 +346,14 @@ R15
 R2
 R3
 DEx4 work 7 flagreg 0 22 em:Xn:`4:O140zVk@7=d02
-!i122 674
+!i122 686
 l24
 L22 26
 Vb2nkQ=eh8h_j><3SBU^8z0
 !s100 KAkRNz:L6B>8PLiZbf<2J0
 R7
 32
-R28
+R33
 !i10b 1
 R34
 R45
@@ -365,7 +366,7 @@ Z47 w1631989573
 R15
 R2
 R3
-!i122 675
+!i122 687
 R4
 Z48 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Ireg.vhd
 Z49 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Ireg.vhd
@@ -375,11 +376,11 @@ VNIc15[lb2f`Y?Ag];m:Ig1
 !s100 :9Qmz;RRSnA<=IJVPg^<D2
 R7
 32
-R28
+Z50 !s110 1663746938
 !i10b 1
-R34
-Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Ireg.vhd|
-Z51 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Ireg.vhd|
+Z51 !s108 1663746938.000000
+Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Ireg.vhd|
+Z53 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/Ireg.vhd|
 !i113 0
 R12
 R13
@@ -388,39 +389,39 @@ R15
 R2
 R3
 DEx4 work 4 ireg 0 22 NIc15[lb2f`Y?Ag];m:Ig1
-!i122 675
+!i122 687
 l19
 L16 21
 V1m3LP1]b13Q5?zI937zf:0
 !s100 lEY>cFCIZPlNE]N3Fk4g03
 R7
 32
-R28
-!i10b 1
-R34
 R50
+!i10b 1
 R51
+R52
+R53
 !i113 0
 R12
 R13
 Eprogcnt
-Z52 w1663743564
+Z54 w1663746411
 R15
 R2
 R3
-!i122 676
+!i122 688
 R4
-Z53 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ProgCnt.vhd
-Z54 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ProgCnt.vhd
+Z55 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ProgCnt.vhd
+Z56 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ProgCnt.vhd
 l0
 L5 1
-V^VeoU9M1o1=`5R0[ccWni0
-!s100 kgO5>3B`5UdINKC6A<PGg0
+VJWHZ?mUjnbJ]JdQaCb76W3
+!s100 P[llnR3B06YY>:O:F;Wlf0
 R7
 32
-Z55 !s110 1663745242
+R50
 !i10b 1
-Z56 !s108 1663745242.000000
+R51
 Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ProgCnt.vhd|
 Z58 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ProgCnt.vhd|
 !i113 0
@@ -430,17 +431,17 @@ Aarch
 R15
 R2
 R3
-DEx4 work 7 progcnt 0 22 ^VeoU9M1o1=`5R0[ccWni0
-!i122 676
+DEx4 work 7 progcnt 0 22 JWHZ?mUjnbJ]JdQaCb76W3
+!i122 688
 l22
 L20 27
 VL`OaMb:8;R[F`MTGZSFRc2
 !s100 J^9GWfgo9c[13R4`_nUnW1
 R7
 32
-R55
+R50
 !i10b 1
-R56
+R51
 R57
 R58
 !i113 0
@@ -452,7 +453,7 @@ Z60 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z61 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 R2
 R3
-!i122 677
+!i122 689
 R4
 Z62 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/RAM.vhd
 Z63 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/RAM.vhd
@@ -462,9 +463,9 @@ VLT:A=NHlFRnI4DUFzS<L32
 !s100 oN3D_M]C;=^hH=hzULhf;2
 R7
 32
-R55
+R50
 !i10b 1
-R56
+R51
 Z64 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/RAM.vhd|
 Z65 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/RAM.vhd|
 !i113 0
@@ -476,16 +477,16 @@ R61
 R2
 R3
 DEx4 work 3 ram 0 22 LT:A=NHlFRnI4DUFzS<L32
-!i122 677
+!i122 689
 l26
 L18 31
 VggjUl8nYAZjXHSlm32Bn=1
 !s100 >j8lkhFCJ10_dH@A2<M6j2
 R7
 32
-R55
+R50
 !i10b 1
-R56
+R51
 R64
 R65
 !i113 0
@@ -519,7 +520,7 @@ Z66 w1632730996
 R15
 R2
 R3
-!i122 678
+!i122 690
 R4
 Z67 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/reg.vhd
 Z68 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/reg.vhd
@@ -529,9 +530,9 @@ VjMhHYLki3UcH<Ml3`PER;3
 !s100 JDhc>d9U=_DzeClkSXWTN0
 R7
 32
-R55
+R50
 !i10b 1
-R56
+R51
 Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/reg.vhd|
 Z70 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/reg.vhd|
 !i113 0
@@ -542,16 +543,16 @@ R15
 R2
 R3
 DEx4 work 3 reg 0 22 jMhHYLki3UcH<Ml3`PER;3
-!i122 678
+!i122 690
 l21
 L18 21
 VRiE=IKYj>NY`7`[n<_7_G3
 !s100 gTDKeog9XGQZTHnj^?kN33
 R7
 32
-R55
+R50
 !i10b 1
-R56
+R51
 R69
 R70
 !i113 0
@@ -563,7 +564,7 @@ R60
 R61
 R2
 R3
-!i122 679
+!i122 691
 R4
 Z72 8H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd
 Z73 FH:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd
@@ -573,11 +574,11 @@ V4RT8MofiAJ^:OX`:GKHzJ1
 !s100 YRo07d6=Z;T;WUbHjziN50
 R7
 32
-R55
+Z74 !s110 1663746939
 !i10b 1
-R56
-Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd|
-Z75 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd|
+Z75 !s108 1663746939.000000
+Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd|
+Z77 !s107 H:/Maciek/Elektronika/FPGA/Projekty/CPU-1/CPU-1/ROM.vhd|
 !i113 0
 R12
 R13
@@ -587,18 +588,18 @@ R61
 R2
 R3
 DEx4 work 3 rom 0 22 4RT8MofiAJ^:OX`:GKHzJ1
-!i122 679
+!i122 691
 l25
 L17 65
 Vlc5@KY:31:]BYB7[:9=LC1
 !s100 ;z5DhEkZ9zHAQeX2d[kcd3
 R7
 32
-R55
-!i10b 1
-R56
 R74
+!i10b 1
 R75
+R76
+R77
 !i113 0
 R12
 R13
